@@ -1,6 +1,6 @@
 # gettingandcleaningdata
 
-========================================
+
 Candace Holcombe-Volke
 Completion Date: 1/9/20
 Johns Hopkins Coursera Data Science Specialization - Getting and Cleaning Data, course #3
