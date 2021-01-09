@@ -1,0 +1,25 @@
+This code book describes the data transformations and final data produced by run_analysis.r. 
+
+UCI HAR Datasets are initially read in using read.table without further transformations, from files downloaded here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+A description of the raw data and collection techniques can be found here: https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+THE VARIABLES
+A full description of the variables is available in the features_info.txt document. A subset of these variables were summarized in the final data. The subset includes the variables describing the mean and standard deviations of each measurement collecting on the X, Y, and Z axes. 
+
+THE DATA
+The data included in the final data summary ("final_data.txt") is an summary of each of the variables included (mean and standard deviation data), for each subject, for each activity. 
+
+TRANSFORMATIONS
+Reading data: No transformations were done on the data in the process of reading into storage. 
+Merging data: First, all training data was merged column-wise. The ytrain data and xtrain data were binded to the training subject ID and Activity data. Secondly, the same process was followed for all testing data. Finally, the combined test set was merged with the training set row-wise. 
+
+Column names were then updated from non-descriptive variable names to the corresponding feature names. The first two columns were retitled "SubjectID" and "Activity" respectively. Then, each column was renamed according to the name in the list of features ("features.txt"). 
+
+Next, reldata was created as a subset of the complete dataset which includes only variables related to mean and standard deviation data. 
+This was accomplished by using the grep function to search the strings in the features list (column names) for patterns matching "mean()" and "std()" using regex. The index of the features list where these patterns were matched was returned, and used as indices on which to subset the full dataset. 
+
+To make the data more comprehensible, gsub was used to replace the factors present in the Activity variable for each observation. Using the activity labels ("activity_labels.txt"), each factor was replaced with is description. 
+
+Finally, the final tidy data set was created through the dplyr group_by and summarize_all methods. First, the data was grouped by SubjectID, and then by Activity, and the mean of each variable was calculated for these groups. The final data presents 180 rows (30 subjects with 6 activities), and 68 columns (66 variables, the SubjectID and Activity). Summarized data is presented in the same unit measurements as raw data. 
+
