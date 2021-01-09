@@ -4,15 +4,15 @@ library(data.table)
 library(purrr)
 
 # Read in data
-# xtrain <- read.table("C:/Users/orhol/Desktop/Candace_School/MOOCS/Johns Hopkins Data Science/Getting and Cleaning Data/Week 4/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/X_train.txt")
-# ytrain <- read.table("C:/Users/orhol/Desktop/Candace_School/MOOCS/Johns Hopkins Data Science/Getting and Cleaning Data/Week 4/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/y_train.txt")
-# subject_train <- read.table("C:/Users/orhol/Desktop/Candace_School/MOOCS/Johns Hopkins Data Science/Getting and Cleaning Data/Week 4/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt")
-# xtest <- read.table("C:/Users/orhol/Desktop/Candace_School/MOOCS/Johns Hopkins Data Science/Getting and Cleaning Data/Week 4/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/X_test.txt")
-# ytest <- read.table("C:/Users/orhol/Desktop/Candace_School/MOOCS/Johns Hopkins Data Science/Getting and Cleaning Data/Week 4/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/y_test.txt")
-# subject_test <- read.table("C:/Users/orhol/Desktop/Candace_School/MOOCS/Johns Hopkins Data Science/Getting and Cleaning Data/Week 4/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/subject_test.txt")
-# actdata <- read.table("C:/Users/orhol/Desktop/Candace_School/MOOCS/Johns Hopkins Data Science/Getting and Cleaning Data/Week 4/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/activity_labels.txt")
+xtrain <- read.table("X_train.txt")
+ytrain <- read.table("y_train.txt")
+subject_train <- read.table("subject_train.txt")
+xtest <- read.table("X_test.txt")
+ytest <- read.table("y_test.txt")
+subject_test <- read.table("subject_test.txt")
+actdata <- read.table("activity_labels.txt")
 
-features <-  read.table("C:/Users/orhol/Desktop/Candace_School/MOOCS/Johns Hopkins Data Science/Getting and Cleaning Data/Week 4/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/features.txt")
+features <-  read.table("features.txt")
 features <- unlist(features[2], use.names = F)
 
 # Data exploration
