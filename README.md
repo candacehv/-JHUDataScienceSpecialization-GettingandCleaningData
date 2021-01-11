@@ -2,10 +2,10 @@
 ## Produce a tidy summary dataset
 
 
-Candace Holcombe-Volke
-Completion Date: 1/9/20
-Johns Hopkins Coursera Data Science Specialization - Getting and Cleaning Data, course #3
-========================================
+* Candace Holcombe-Volke
+* Completion Date: 1/9/20
+* Johns Hopkins Coursera Data Science Specialization - Getting and Cleaning Data, course #3
+
 
 This repo contains one script - the run_analysis.r script, which intakes raw data from the UCI HAR Dataset, and transforms the data into a single, tidy summary of raw data collected on each subject, for each activity, as documented in the data. (See CodeBook for variable, data, and transformation information.)
 
